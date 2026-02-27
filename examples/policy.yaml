@@ -1,0 +1,21 @@
+# agentguard policy.yaml
+# Define explicit allowlists and blocklists for your agent's tools.
+# Functions not listed here are scored automatically by keyword analysis.
+
+allowlist:
+  - read_logs
+  - get_user
+  - list_records
+  - read_schema
+  - search_documents
+
+blocklist:
+  - drop_database
+  - drop_table
+  - delete_all_users
+  - wipe_cache
+  - format_disk
+
+# What to do with functions not in either list:
+# safe | medium | high
+default_unknown: medium
